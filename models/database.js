@@ -6,7 +6,8 @@ var options = {
   useUnifiedTopology: true
  };
 
-mongoose.connect('mongodb+srv://admin:azerty@cluster0.arufm.mongodb.net/Ticktac?retryWrites=true&w=majority',
+
+mongoose.connect(`mongodb+srv://${process.env.ADMIN}:${process.env.PASSWORD}@${process.env.CLUSTER}?retryWrites=true&w=majority`,
    options,
    function(err) {
     if (err) {
